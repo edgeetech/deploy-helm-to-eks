@@ -1,5 +1,5 @@
 # action.yml
-name: 'Deploy Helm chart to AWS EKS Cluster'
+name: 'Deploy a Helm Chart to AWS EKS Cluster'
 description: 'Deploy a helm chart to an Amazon EKS cluster using IAM authentication.'
 branding:
     icon: anchor

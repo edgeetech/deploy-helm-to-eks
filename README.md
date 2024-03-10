@@ -1,7 +1,7 @@
 # Deploy Helm charts to AWS EKS cluster
 
-`bitovi/github-actions-deploy-eks-helm` deploys helm charts to an EKS Cluster.
-![alt](https://bitovi-gha-pixel-tracker-deployment-main.bitovi-sandbox.com/pixel/LW06qgz37wS0e62G4UHYS)
+`edgeetech/deploy-helm-to-eks` deploys helm charts to an EKS Cluster.
+
 ## Action Summary
 This action deploys Helm charts to an EKS cluster, allowing ECR/OCI as sources, and handling plugin installation, using [this awesome Docker image](https://github.com/alpine-docker/k8s) as base.
 
@@ -15,21 +15,15 @@ If you would like to deploy a backend app/service, check out our other actions:
 | [Deploy static site to AWS (S3/CDN/R53)](https://github.com/marketplace/actions/deploy-static-site-to-aws-s3-cdn-r53) | Hosts a static site in AWS S3 with CloudFront |
 <br/>
 
-**And more!**, check our [list of actions in the GitHub marketplace](https://github.com/marketplace?category=&type=actions&verification=&query=bitovi)
 
 # Need help or have questions?
-This project is supported by [Bitovi, A DevOps consultancy](https://www.bitovi.com/services/devops-consulting).
-
-You can **get help or ask questions** on our:
-
-- [Discord Community](https://discord.gg/zAHn4JBVcX)
-
+This project is supported by [EdgeeTech Ltd](https://edgee.tech).
 
 ## Customizing
 
 > **Note:** Although Helm repositories are different than [OCI registries](https://helm.sh/docs/topics/registries/), the `chart-repository` variable supports both options.
 
-See [example below](https://github.com/bitovi/github-actions-deploy-eks-helm#example-3) for reference, but should be similar to using a repo.
+See [example below](https://github.com/edgeetech/deploy-helm-to-eks#example-3) for reference, but should be similar to using a repo.
 
 ### Note on charts list command
 
@@ -74,7 +68,7 @@ Following inputs can be used as `step.with` keys
 
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -90,7 +84,7 @@ Following inputs can be used as `step.with` keys
 ## Example 2 - Custom Chart Repo
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -109,7 +103,7 @@ Following inputs can be used as `step.with` keys
 ## Example 3 - OCI Chart Repo
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -132,7 +126,7 @@ Following inputs can be used as `step.with` keys
         aws-region: ${{ env.aws-region }}
 
     - name: Install Helm Chart
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-region: ${{ env.aws-region }}
         cluster-name: eks-cluster-${{ env.environment }}
@@ -142,7 +136,7 @@ Following inputs can be used as `step.with` keys
 ## Example 5 - Use secrets with vals backend
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -160,7 +154,7 @@ Following inputs can be used as `step.with` keys
 ## Example 6 - Use with S3 as repo
 ```yaml
     - name: Deploy S3 Helm chart
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -179,7 +173,7 @@ Following inputs can be used as `step.with` keys
 
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -194,7 +188,7 @@ Following inputs can be used as `step.with` keys
 
 ```yaml
     - name: Deploy Helm
-      uses: bitovi/github-actions-deploy-eks-helm@v1.2.9
+      uses: edgeetech/deploy-helm-to-eks@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -205,15 +199,7 @@ Following inputs can be used as `step.with` keys
 ```
 
 ## Contributing
-We would love for you to contribute to [`bitovi/github-actions-deploy-eks-helm`](https://github.com/bitovi/github-actions-deploy-eks-helm).   [Issues](https://github.com/bitovi/github-actions-deploy-eks-helm/issues) and [Pull Requests](https://github.com/bitovi/github-actions-deploy-eks-helm/pulls) are welcome!
+We would love for you to contribute to [`edgeetech/deploy-helm-to-eks`](https://github.com/edgeetech/deploy-helm-to-eks).   [Issues](https://github.com/edgeetech/deploy-helm-to-eks/issues) and [Pull Requests](https://github.com/edgeetech/deploy-helm-to-eks/pulls) are welcome!
 
 ## License
-The scripts and documentation in this project are released under the [MIT License](https://github.com/bitovi/github-actions-deploy-eks-helm/blob/main/LICENSE).
-
-## Provided by Bitovi
-[Bitovi](https://www.bitovi.com/) is a proud supporter of Open Source software.
-
-## Need help or have questions?
-You can **get help or ask questions** on [Discord channel](https://discord.gg/zAHn4JBVcX)! Come hangout with us!
-
-Or, you can hire us for training, consulting, or development. [Set up a free consultation](https://www.bitovi.com/devops-consulting).
+The scripts and documentation in this project are released under the [MIT License](https://github.com/edgeetech/deploy-helm-to-eks/blob/main/LICENSE).
